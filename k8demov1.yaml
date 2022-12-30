@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: k8demo
+  labels:
+    app: k8demo
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: k8demo
+  template:
+    metadata:
+      labels:
+        app: k8demo
+    spec:
+      containers:
+      - name: k8demo
+        image: sunnyjamwal/k8demo
+        ports:
+        - containerPort: 80
