@@ -16,6 +16,6 @@ spec:
     spec:
       containers:
       - name: k8demo
-        image: sunnyjamwal/k8demo
+        image: sunnyjamwal/k8demo:latest
         ports:
         - containerPort: 80
