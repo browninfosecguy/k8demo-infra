@@ -26,10 +26,11 @@ kind: Service
 metadata:
   name: k8demo-service
 spec:
-  type: ClusterIP
+  type: NodePort
   selector:
     app: k8demo
   ports:
     - protocol: TCP
       port: 8000
       targetPort: 80
+      nodePort: 30100
