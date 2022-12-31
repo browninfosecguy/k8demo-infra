@@ -19,3 +19,18 @@ spec:
         image: sunnyjamwal/k8demo:latest
         ports:
         - containerPort: 80
+---
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: k8demo-service
+spec:
+  type: NodePort
+  selector:
+    app: k8demo
+  ports:
+    - protocol: TCP
+      port: 8000
+      targetPort: 80
+      nodePort: 30100
