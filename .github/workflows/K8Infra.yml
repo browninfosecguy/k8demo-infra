@@ -1,0 +1,14 @@
+name: K8 Infra
+on:
+  workflow_run:
+    workflows: [Build]
+    types: [requested]
+    branches: [k8Project]
+    
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      -
+        name: Checkout
+        uses: actions/checkout@v3
